@@ -674,25 +674,18 @@
 <script>
 function enviar() {
   const nome = document.getElementById('nome').value.trim();
-  
 
   if (!nome) {
     alert('Preencha seu nome para continuar.');
     return;
   }
 
-  // Mostra mensagem de sucesso
-  document.getElementById('formulario').style.display = 'none';
-  const s = document.getElementById('sucesso');
-  s.style.display = 'block';
-  s.querySelector('h3').textContent = 'PRONTO, ' + nome.toUpperCase() + '!';
-
-  // Monta link do WhatsApp com o nome
   const msg = encodeURIComponent(
     'Olá Michael! Me chamo ' + nome + '. Quero meu PDF do Método Voz da Energia ⚡'
   );
-  s.querySelector('a').href = 'https://wa.me/5521997347173?text=' + msg;
-    window.open('https://wa.me/5521997347173?text=' + msg, '_blank');
+
+  window.location.href = 'https://wa.me/5521997347173?text=' + msg;
+}
 }
 
 // Enter no formulário
