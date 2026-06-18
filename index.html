@@ -606,8 +606,8 @@
 
     <div class="sucesso" id="sucesso">
       <div class="sucesso-icon">🎙️</div>
-      <h3>PRONTO, [NOME]!</h3>
-      <p>Clique abaixo para entrar na comunidade e receber seu PDF agora mesmo.</p>
+      <h3>PRONTO, ' + nome.toUpperCase() + '!</h3>
+      <p>Clique abaixo para receber seu PDF agora mesmo.</p>
       <a href="https://wa.me/5521997347173?text=Ol%C3%A1%20Michael!%20Quero%20meu%20PDF%20do%20M%C3%A9todo%20Voz%20da%20Energia%20%E2%9A%A1" class="btn-wpp" target="_blank">
         📲 Entrar e Receber o PDF
       </a>
@@ -674,10 +674,10 @@
 <script>
 function enviar() {
   const nome = document.getElementById('nome').value.trim();
-  const wpp = document.getElementById('whatsapp').value.trim();
+  
 
-  if (!nome || !wpp) {
-    alert('Preencha seu nome e WhatsApp para continuar.');
+  if (!nome) {
+    alert('Preencha seu nome para continuar.');
     return;
   }
 
@@ -689,7 +689,7 @@ function enviar() {
 
   // Monta link do WhatsApp com o nome
   const msg = encodeURIComponent(
-    'Olá Michael! Me chamo ' + nome + ' e quero meu PDF do Método Voz da Energia ⚡'
+    'Olá Michael! Me chamo ' + nome + '. Quero meu PDF do Método Voz da Energia ⚡'
   );
   s.querySelector('a').href = 'https://wa.me/5521997347173?text=' + msg;
 }
