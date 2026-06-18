@@ -673,26 +673,13 @@
 
 <script>
 function enviar() {
-  const nome = document.getElementById('nome').value.trim();
-
+  var nome = document.getElementById('nome').value.trim();
   if (!nome) {
     alert('Preencha seu nome para continuar.');
     return;
   }
-
-  const msg = encodeURIComponent(
-    'Olá Michael! Me chamo ' + nome + '. Quero meu PDF do Método Voz da Energia ⚡'
-  );
-
-  window.location.href = 'https://wa.me/5521997347173?text=' + msg;
+  var msg = 'Ola Michael! Me chamo ' + nome + '. Quero meu PDF do Metodo Voz da Energia';
+  var url = 'https://wa.me/5521997347173?text=' + encodeURIComponent(msg);
+  window.location.href = url;
 }
-}
-
-// Enter no formulário
-document.addEventListener('keypress', function(e) {
-  if (e.key === 'Enter') enviar();
-});
 </script>
-
-</body>
-</html>
